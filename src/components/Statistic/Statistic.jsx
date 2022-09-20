@@ -4,8 +4,8 @@ import { Stats } from "../Stats/Stats"
 import data from '../../Info/data'
 
 export const Statistic = () => {
-    return <div>
+    return <section>
         <StatTitle />
         <Stats events={data} />
-    </div>
+    </section>
 }

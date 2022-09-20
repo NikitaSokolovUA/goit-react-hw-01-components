@@ -11,6 +11,6 @@ export const Stat = ({label, percentage, color}) => {
 
 Stat.propTypes = {
     label: PropTypes.string.isRequired,
-    percentage: PropTypes.string.isRequired,
+    percentage: PropTypes.number.isRequired,
     color: PropTypes.string,
 }
