@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 export const ItemList = styled.li`
     padding: 20px;
-    border: 1px solid black;
+    border-radius: 4px;
     width: 100px;
     color: white;
 `
