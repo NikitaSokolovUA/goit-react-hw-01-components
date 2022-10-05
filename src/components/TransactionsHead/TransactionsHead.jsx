@@ -1,11 +1,12 @@
 import React from "react"
+import {TableHead,TableHeadElement} from './TransactionHead.styled'
 
 export const TransactionsHead = () => {
-    return  <thead>
+    return  <TableHead>
     <tr>
-      <th>Type</th>
-      <th>Amount</th>
-      <th>Currency</th>
+      <TableHeadElement>Type</TableHeadElement>
+      <TableHeadElement>Amount</TableHeadElement>
+      <TableHeadElement>Currency</TableHeadElement>
     </tr>
-  </thead>
+  </TableHead>
 }

@@ -2,16 +2,17 @@ import PropTypes from 'prop-types'
 import React from "react"
 import {username, tag, location, avatar, stats} from '../../Info/user'
 import { Profile } from "../Profile/Profile"
+import { ProfileSection } from './User.styled'
 
 export const User = () => {
-  return <div>
+  return <ProfileSection>
     <Profile
       username={username}
       tag={tag}
       location={location}
       avatar={avatar}
       stats={stats} />
-  </div>
+  </ProfileSection>
 }
 
 User.propTypes = {

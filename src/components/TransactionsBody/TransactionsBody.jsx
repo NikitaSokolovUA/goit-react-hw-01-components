@@ -1,14 +1,27 @@
 import React from "react"
-import {OneTransaction} from '../OneOfTransaction/OneOfTransaction'
+import PropTypes from 'prop-types'
+import { OneTransaction } from '../OneOfTransaction/OneOfTransaction'
+import {TableBody} from './TransactionBody.styled'
 
 export const TransactionsBody = ({transactions}) => {
-    return <tbody>
-        {transactions.map(transaction => <OneTransaction
-            key={transaction.id}
-            invoice={transaction.type}
-            amount={transaction.amount}
-            currency={transaction.currency}
+    return <TableBody>
+        {transactions.map(({id, type, amount, currency}) => <OneTransaction
+            key={id}
+            invoice={type}
+            amount={amount}
+            currency={currency}
             />)}
         
-    </tbody>
+    </TableBody>
+}
+
+TransactionsBody.propTypes = {
+    transactions: PropTypes.arrayOf(
+        PropTypes.shape(PropTypes.exact({
+            id: PropTypes.string.isRequired,
+            type: PropTypes.string.isRequired,
+            amount: PropTypes.string.isRequired,
+            currency: PropTypes.string.isRequired,
+        }
+        )))
 }

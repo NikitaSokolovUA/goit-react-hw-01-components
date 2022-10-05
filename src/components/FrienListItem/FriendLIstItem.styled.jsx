@@ -9,11 +9,15 @@ export const ListItem = styled.li`
     margin-right: auto;
     border: 1px solid grey;
     border-radius: 5px;
-    box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%), 0px 2px 1px rgb(0 0 0 / 20%);
+    cursor: pointer;
 
 
     &:not(:last-child){
         margin-bottom: 10px;
+    };
+
+    &:hover, &:focus {
+        box-shadow: 0 1px 3px rgb(0 0 0 / 20%), 0 1px 1px rgb(0 0 0 / 14%), 0 2px 1px -1px rgb(0 0 0 / 12%);
     }
 `
 
