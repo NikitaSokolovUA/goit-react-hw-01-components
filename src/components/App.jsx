@@ -1,5 +1,5 @@
 import React from "react"
-import profile from '../Info/user'
+import user from '../Info/user'
 import statistics from '../Info/data' 
 import friends from '../Info/friends'
 import transactions from '../Info/transactions'
@@ -13,7 +13,11 @@ import { TransactionHistory } from "./TransactionHistory/TransactionHistory"
 
 export const App = () => {
   return <div>
-    <Profile  profile={ profile } />
+    <Profile    username={user.username}
+                tag={user.tag}
+                location={user.location}
+                avatar={user.avatar}
+                stats={user.stats} />
     <Statistics statistics={ statistics } />
     <FriendList friends={ friends } />
     <TransactionHistory transactions={ transactions } />
