@@ -1,11 +1,16 @@
 import React from "react"
-import { StatTitle } from '../StatisticTitle/StatisticTitle'
-import { Stats } from "../Stats/Stats"
-import data from '../../Info/data'
+import PropTypes from 'prop-types'
+import {ItemList, NameLabel, Percentage} from './Statistic.styled'
 
-export const Statistic = () => {
-    return <section>
-        <StatTitle />
-        <Stats events={data} />
-    </section>
+export const Statistic = ({label, percentage, color}) => {
+    return <ItemList style={{backgroundColor: color}}>
+        <NameLabel> {label} </NameLabel>
+        <Percentage> {percentage} %</Percentage>
+    </ItemList>
+}
+
+Statistic.propTypes = {
+    label: PropTypes.string.isRequired,
+    percentage: PropTypes.number.isRequired,
+    color: PropTypes.string,
 }

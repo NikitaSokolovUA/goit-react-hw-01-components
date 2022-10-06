@@ -1,26 +1,30 @@
 import React from "react"
 import PropTypes from 'prop-types'
-import { FriendListItem } from "../FrienListItem/FrienListItem"
-import { ListOfFriends } from "./FriendList.styled"
+import { Friend } from "../Friend/Friend"
+import {  ListOfFriends } from "./FriendList.styled"
 
 
 
 export const FriendList = ({friends}) => {
-    return <ListOfFriends>
-        {friends.map(friend =>
-            <FriendListItem key={friend.id}
-                avatar={friend.avatar}
-                isOnline={friend.isOnline}
-                name={friend.name} />)}
-    </ListOfFriends>
+    return <section>
+        <ListOfFriends>
+            {friends.map(({id, avatar, isOnline, name}) =>
+                    <Friend key={id}
+                        avatar={avatar}
+                        isOnline={isOnline}
+                        name={name} />
+                
+            )}
+        </ListOfFriends>
+    </section>
 }
 
-FriendList.propTypes = {
-    friends: PropTypes.arrayOf(PropTypes.exact({
+FriendList.propTypes = {  
+    friends: PropTypes.arrayOf(PropTypes.shape({
         avatar: PropTypes.string.isRequired,
         id: PropTypes.number.isRequired,
         isOnline: PropTypes.bool.isRequired,
-        name: PropTypes.string.isRequired,
-    }
-    ))
+        name: PropTypes.string.isRequired, 
+    }))
+         
 }

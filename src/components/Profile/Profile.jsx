@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types'
 import React from "react";
-import {Avatar, Profiler, Description, Name, Tag, Location, StatsList, StatsItem, StatsLabel, StatsQuantity} from './Profile.styled'
+import {Avatar, Profiler, Description, Name, Tag, Location, StatsList, StatsItem, StatsLabel, StatsQuantity, Card} from './Profile.styled'
 
-export const Profile = ({username, tag, location, avatar, stats}) => {
-    return <Profiler>
+export const Profile = ({profile:{username, tag, location, avatar, stats:{followers, views, likes}}}) => {
+  return  <Card>
+  <Profiler>
   <Description>
     <Avatar
       src={avatar}
@@ -17,24 +18,29 @@ export const Profile = ({username, tag, location, avatar, stats}) => {
   <StatsList >
     <StatsItem>
       <StatsLabel>Followers</StatsLabel>
-      <StatsQuantity >{stats.followers}</StatsQuantity>
+      <StatsQuantity >{followers}</StatsQuantity>
     </StatsItem>
     <StatsItem>
       <StatsLabel>Views</StatsLabel>
-      <StatsQuantity >{stats.views}</StatsQuantity>
+      <StatsQuantity >{views}</StatsQuantity>
     </StatsItem>
     <StatsItem>
       <StatsLabel>Likes</StatsLabel>
-      <StatsQuantity >{stats.likes}</StatsQuantity>
+      <StatsQuantity >{likes}</StatsQuantity>
     </StatsItem>
   </StatsList>
 </Profiler>
+    </Card>
 }
 
 Profile.propTypes = {
-  username: PropTypes.string.isRequired,
-  tag: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  avatar: PropTypes.string.isRequired,
-  stats: PropTypes.objectOf(PropTypes.number),
+  profile: PropTypes.shape({
+    username: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+    stats: PropTypes.objectOf(PropTypes.number)
+    })
 }
+
+

@@ -1,18 +1,22 @@
 import React from "react"
-import { User } from "./User/User"
-import { Statistic } from './Statistic/Statistic'
-import { Friends } from "./Friends/Friends"
-import { Transactions } from "./Transaction/Transaction"
+import profile from '../Info/user'
+import statistics from '../Info/data' 
+import friends from '../Info/friends'
+import transactions from '../Info/transactions'
+import { Profile } from "./Profile/Profile"
+import { Statistics } from "components/Statistics/Statistics"
+import { FriendList } from "./FriendLIst/FriendList"
+import { TransactionHistory } from "./TransactionHistory/TransactionHistory"
 
 
 
 
 export const App = () => {
   return <div>
-    <User />
-    <Statistic />
-    <Friends />
-    <Transactions />
+    <Profile  profile={ profile } />
+    <Statistics statistics={ statistics } />
+    <FriendList friends={ friends } />
+    <TransactionHistory transactions={ transactions } />
   </div>
 }
 

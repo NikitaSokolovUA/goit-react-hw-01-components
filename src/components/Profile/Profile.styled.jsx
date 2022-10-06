@@ -1,5 +1,11 @@
 import styled from "@emotion/styled";
 
+
+export const Card = styled.div`
+    display: flex;
+    justify-content: center;
+`;
+
 export const Profiler = styled.div`
     width: 400px;
     border-radius: 10px;
