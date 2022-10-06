@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from 'prop-types'
-import { OneTransaction } from "components/OneTransaction/OneTransaction"
-import { Table,TableHead, TableHeadElement, TableBody } from "./TransactionHistory.styled"
+import { Table,TableHead, TableHeadElement, TableBody, TableElements,OneTableElement } from "./TransactionHistory.styled"
 
 export const TransactionHistory = ({transactions}) => {
      return <section>
@@ -16,11 +15,12 @@ export const TransactionHistory = ({transactions}) => {
 
              <TableBody>
                  {transactions.map(({ id, type, amount, currency }) =>
-                     <OneTransaction key={id}
-                        invoice={type}
-                        amount={amount}
-                        currency={currency}
-            />)}
+                     <TableElements key={id}>
+                        <OneTableElement>{type}</OneTableElement>
+                        <OneTableElement>{amount}</OneTableElement>
+                        <OneTableElement>{currency}</OneTableElement>
+                    </TableElements>
+            )}
             </TableBody>
         </Table>
     </section>

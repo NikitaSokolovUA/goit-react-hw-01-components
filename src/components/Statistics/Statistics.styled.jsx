@@ -17,3 +17,24 @@ export const List = styled.ul`
     margin: 0;
     margin-top: 30px;
 `
+
+export const ItemList = styled.li`
+    padding: 20px;
+    border-radius: 4px;
+    width: 100px;
+    color: black;
+`
+
+export const NameLabel = styled.span`
+    display: block;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+`
+
+export const Percentage = styled.span`
+    display: block;
+    font-size: 30px;
+    text-align: center;
+
+`
