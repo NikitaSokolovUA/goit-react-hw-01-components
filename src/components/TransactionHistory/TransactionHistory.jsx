@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from 'prop-types'
-import { OneTransaction } from "components/OneOfTransaction/OneOfTransaction"
+import { OneTransaction } from "components/OneTransaction/OneTransaction"
 import { Table,TableHead, TableHeadElement, TableBody } from "./TransactionHistory.styled"
 
 export const TransactionHistory = ({transactions}) => {

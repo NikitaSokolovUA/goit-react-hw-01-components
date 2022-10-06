@@ -4,9 +4,9 @@ import { Title, List } from "./Statistics.styled"
 import { Statistic  } from "components/Statistic/Statistic"
 import { getRandomHexColor } from '../../utils/RandomColor'
 
-export const Statistics = ({statistics}) => {
+export const Statistics = ({title, statistics}) => {
     return  <section>
-        <Title>Upload stats</Title>
+        <Title>{title}</Title>
         <List>
            { statistics.map(statistic =>
                 <Statistic key={statistic.id}

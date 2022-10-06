@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from 'prop-types'
-import {TableElements,OneTableElement} from './OneOfTransaction.styled'
+import {TableElements,OneTableElement} from './OneTransaction.styled'
 
 export const OneTransaction = ({ invoice, amount, currency}) => {
     return <TableElements>

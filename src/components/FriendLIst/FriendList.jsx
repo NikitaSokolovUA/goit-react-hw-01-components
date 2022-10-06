@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from 'prop-types'
-import { Friend } from "../Friend/Friend"
+import { FriendListItem } from "../FriendListItem/FriendListItem"
 import {  ListOfFriends } from "./FriendList.styled"
 
 
@@ -9,7 +9,7 @@ export const FriendList = ({friends}) => {
     return <section>
         <ListOfFriends>
             {friends.map(({id, avatar, isOnline, name}) =>
-                    <Friend key={id}
+                    <FriendListItem key={id}
                         avatar={avatar}
                         isOnline={isOnline}
                         name={name} />
