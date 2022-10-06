@@ -5,7 +5,7 @@ import { getRandomHexColor } from '../../utils/RandomColor'
 
 export const Statistics = ({title, statistics}) => {
     return  <section>
-        <Title>{title}</Title>
+        {title && <Title>{title}</Title>}
         <List>
             {statistics.map(({id, label, percentage}) =>
                  <ItemList key={id}  style={{backgroundColor: getRandomHexColor()}}>
@@ -18,7 +18,7 @@ export const Statistics = ({title, statistics}) => {
 }
 
 Statistics.propTypes = {
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     statistics: PropTypes.arrayOf(PropTypes.exact({
         id: PropTypes.string.isRequired,
         label: PropTypes.string.isRequired,
